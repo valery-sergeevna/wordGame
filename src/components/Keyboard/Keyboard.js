@@ -57,6 +57,7 @@ const Keyboard = () => {
     }
 
     const guessWord = (elem) => {
+        console.log(word);
         if(!elem.clicked){
             setArray(array.map(obj => {
                 if (obj.id === elem.id) {

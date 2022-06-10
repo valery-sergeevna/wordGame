@@ -31,4 +31,17 @@ button.active{
   display: flex;
   justify-content: center;
 }
-
+.check__word{
+  margin-top:50px;
+  margin-bottom:30px;
+}
+input{
+  width:320px;
+  padding:10px 20px;
+}
+.check__btn{
+  display: block;
+  width:200px;
+  padding:10px 20px;
+  margin:10px auto;
+}

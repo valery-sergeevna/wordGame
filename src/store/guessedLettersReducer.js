@@ -1,5 +1,6 @@
 const initialState = {
-    letters: []
+    letters: [],
+    checkWord: false
 }
 
 const SET_GUESSED_LETTER = "SET_GUESSED_LETTER";
@@ -12,5 +13,3 @@ export const guessedLettersReducer = (state = initialState, action) => {
             return state
     }
 }
-
-export const setGuessedLetters = (payload) => ({type: SET_GUESSED_LETTER, payload})
