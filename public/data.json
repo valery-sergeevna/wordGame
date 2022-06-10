@@ -1,0 +1,50 @@
+{
+  "animal":[
+    { "id": 1, "name": "hamster" },
+    { "id": 2, "name": "chameleon" },
+    { "id": 3, "name": "bear" },
+    { "id": 4, "name": "tarantula" },
+    { "id": 5, "name": "anteater" },
+    { "id": 6, "name": "jaguar" },
+    { "id": 7, "name": "lizard" },
+    { "id": 8, "name": "ostrich" },
+    { "id": 9, "name": "hummingbird" },
+    { "id": 10, "name": "piranha" }
+  ],
+  "food":[
+    { "id": 1, "name": "patty" },
+    { "id": 2, "name": "spaghetti" },
+    { "id": 3, "name": "pizza" },
+    { "id": 4, "name": "tartlet" },
+    { "id": 5, "name": "bun" } ,
+    { "id": 6, "name": "brynza" },
+    { "id": 7, "name": "charlotte"},
+    { "id": 8, "name": "ham"},
+    { "id": 9, "name": "mackerel"},
+    { "id": 10, "name": "buckwheat"}
+  ],
+  "cities":[
+    { "id": 1, "name": "odessa" },
+    { "id": 2, "name": "mariupol" },
+    { "id": 3, "name": "kirovograd" },
+    { "id": 4, "name": "Lugansk" },
+    { "id": 5, "name": "Kyiv" },
+    { "id": 6, "name": "vinnitsa" },
+    { "id": 7, "name": "lions" },
+    { "id": 8, "name": "berdyansk" },
+    { "id": 9, "name": "Ivano-Frankivsk" },
+    { "id": 10, "name": "kharkiv" }
+  ],
+  "plants":[
+    { "id": 1, "name": "acacia" },
+    { "id": 2, "name": "daisy" },
+    { "id": 3, "name": "forget-me-not" },
+    { "id": 4, "name": "cactus" },
+    { "id": 5, "name": "kalanchoe" },
+    { "id": 6, "name": "aloe" },
+    { "id": 7, "name": "violet" },
+    { "id": 8, "name": "horsetail" },
+    { "id": 9, "name": "chicory" },
+    { "id": 10, "name": "thyme" }
+  ]
+}
