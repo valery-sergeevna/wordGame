@@ -5,6 +5,7 @@ import {Word, Keyboard, StartGame, CheckWord, Modal} from './components/index';
 function App() {
   const [game, setGame] = useState(false);
   const [endGame, setEndGame] = useState(false);
+  const [flag, setFlag] = useState(false);
 
   const startGame = () =>{
     setGame(!game);
@@ -19,7 +20,7 @@ function App() {
       <div className="App">
         {!game ? <StartGame start={startGame}/> :
             <div>
-              <Word/>
+              <Word setEndGame={setEndGame}/>
               <CheckWord setEndGame={setEndGame}/>
               <Keyboard/>
               {endGame && <Modal startAgain={startGame}/>}

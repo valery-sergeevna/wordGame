@@ -23,25 +23,26 @@ const Letter = styled.span`
         visibility: visible;
     }
 `
-const Word = () => {
+const Word = ({setEndGame}) => {
     const [letterArray, setLetterArray] = useState([]);
     const guessed = useSelector(state=>state.letters.letters);
 
     const word = useSelector(state => state.gameData.word);
-    const wordData = word.name.split('');
 
     useEffect(()=>{
+        console.log(guessed, 'word change')
         let allArray = [];
-
-        console.log(guessed, wordData)
-
-        setLetterArray(wordData.map((elem, i)=> {
+        setLetterArray(word.name.split('').map((elem, i)=> {
             return allArray[i] = {
                 letter: elem,
-                isGuessed: guessed.some(one => one.letter === elem),
+                isGuessed: guessed.some(one=>one.letter === elem),
                 key: i * Math.random()
             }}))
-    }, [guessed]);
+
+       if(letterArray && letterArray.length && allArray.every(elem=>elem.isGuessed)){
+            setEndGame(true);
+       }
+    }, [word, guessed]);
 
     const dataLetter = letterArray.map((elem, i) =>
         <Letter key={elem.key} className={`${elem.isGuessed ? 'guessed' : ''}`}>{elem.letter}</Letter>

@@ -38,8 +38,6 @@ const Keyboard = () => {
 
     const word = useSelector(state => state.gameData.word);
 
-    const wordData = word.name.split('');
-
     const createObjectLetter = () =>{
         const allArray = [];
         arr_EN.map((elem, i)=>{
@@ -52,34 +50,33 @@ const Keyboard = () => {
         setArray(allArray);
     }
 
-    const guessLetter = (letter) =>{
-        dispatch({type: "SET_GUESSED_LETTER", payload: letter, repeat: 2})
+    const guessLetter = (letter, obj) =>{
+        dispatch({type: "SET_GUESSED_LETTER", payload: letter})
     }
 
     const guessWord = (elem) => {
         console.log(word);
-        if(!elem.clicked){
-            setArray(array.map(obj => {
-                if (obj.id === elem.id) {
-                    if(wordData.indexOf(obj.letter.toLowerCase()) > -1){
-                        guessLetter(obj.letter.toLowerCase())
-                    }
-                    return {...obj,
-                        clicked: true,
-                        isInWord: wordData.indexOf(obj.letter.toLowerCase()) > -1 ? true : false,
-                        repetitions: wordData.filter(elem => obj.letter.toLowerCase()).length}
-                }else{
-                    return obj;
+        const wordData = word.name.split('');
+        setArray(array.map(obj => {
+            if (obj.id === elem.id) {
+                if(wordData.indexOf(obj.letter.toLowerCase()) > -1){
+                    guessLetter(obj.letter.toLowerCase(), )
                 }
-            }));
-        }
+                return {...obj,
+                    clicked: true,
+                    isInWord: wordData.indexOf(obj.letter.toLowerCase()) > -1 ? true : false,
+                    repeat: wordData.filter(datas=>datas === elem.letter.toLowerCase()).length}
+            }else{
+                return obj;
+            }
+        }));
     }
 
     const dataLetter = array.map((elem, i) =>
         <button key={elem.id} id={elem.id}
                 className = {`${elem.clicked ? 'clicked ' : ''}${elem.isInWord ? 'is_in_word' : ''}`}
                 onClick={()=>guessWord(elem)}>{elem.letter}
-                <span>{elem.repetitions}</span>
+            {elem.repeat > 0 && <span>{elem.repeat}</span>}
         </button>
     );
 
